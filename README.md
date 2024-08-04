@@ -117,11 +117,7 @@ In pratice, pi(n) returns values for up to n ~= 7.5 billion. Calls for n higher 
 
 **inta primes(ulong n)** returns an integer array of all primes <= n. It requests n\*sizeof(bool) + pi(n)\*sizeof(int) bytes from malloc() for the sieve and the integer array.
 
-Using Gaussian prime-counting approximation
-
-      pi(n) ~= n/log(n)
-
-and assuming sizeof(bool)==1 and sizeof(int)==4, the free memory required for compiling an integer array of primes to N ~= (N + 4N/log(N)) bytes. So primes(1000000000) (1 billion) requires ~1.193GB.
+Using Gaussian prime-counting approximation pi(n) ~= n/log(n), and assuming sizeof(bool)==1 and sizeof(int)==4, the free memory required for compiling an integer array of primes to N ~= (N + 4N/log(N)) bytes. So primes(1000000000) (1 billion) requires ~1.193GB.
 
 
 **inta compositionality(ulong n)** returns an integer array of composition values.
